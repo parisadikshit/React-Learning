@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+div h3, h4,li{
+    color: white;
+     margin-top: 20px;
+     margin-right: 20px;
+}
+.speaknow{
+    background-color: #923c81;
+}
+.midnights{
+    background-color: #4e4466;
+}
+h1{
+    margin-top: 0;
+    font-size: 22px;
+}
+h2{
+    margin-top: 0;
+    font-size: 20px;
+}
+h3{ 
+    margin-top: 0;
+    font-size: 18px;
+}
+h4{     
+    padding: 0px 10px;
+    margin-top: 0;
+    font-size: 16px;
+}
+h1{
+    margin-top: 0;
+    font-size: 18px;
+}
+h5{
+    margin-top: 0;
+    font-size: 16px;
+}
+h6{
+    margin-top: 0;
+    font-size: 14px;
+}
+code{
+    font-size: 1.2em;
+}
+ul{
+    padding-inline-start: 20px;
+}
+ul{
+    list-style-type: none;
+    padding: 0px 10px;
+}
+li{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+}
