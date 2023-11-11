@@ -14,6 +14,10 @@ const StyledButton = styled.button`
 background-color:${props => props.bg === 'blue'? 'blue':'green'};
 font-size:22px;
 color:white;
+&:hover,
+&:focus{
+color:black;
+};
 `
 const App = () => {
 	const { theme, toggleTheme } = useTheme()
