@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from 'styled-components';
 
 // custom hook
 export const useTheme = () => {
@@ -9,6 +10,11 @@ export const useTheme = () => {
 	return {theme, toggleTheme}
 }
 
+const StyledButton = styled.button`
+background-color:${props => props.bg === 'blue'? 'blue':'green'};
+font-size:22px;
+color:white;
+`
 const App = () => {
 	const { theme, toggleTheme } = useTheme()
 	return (
@@ -19,7 +25,7 @@ const App = () => {
 				backgroundColor: theme === 'light' ? 'white' : 'black',
 			}}
 		>
-			<button onClick={toggleTheme}>Toggle Theme {theme}</button>
+			<StyledButton type="button" bg="green" onClick={toggleTheme}>Toggle Theme {theme}</StyledButton>
       <SignUpForm/>
 
 		</div>
@@ -92,7 +98,7 @@ const SignUpForm = () => {
 					data-testid="confirm-password-error-id"
 					className="error"
 				>"Passwords do not match"</p>}
-				<button type="submit">Sign Up</button>
+				<StyledButton type="submit" bg="blue">Sign Up</StyledButton>
 			</form>
 	)
 }
