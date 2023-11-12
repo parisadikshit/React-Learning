@@ -37,7 +37,7 @@ const App = () => {
 }
 
 
-const SignUpForm = () => {
+export const SignUpForm = () => {
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -58,8 +58,8 @@ const SignUpForm = () => {
 					data-testid="first-name-id"
 					type="text"
 					name="firstName"
-          value={firstname}
-          onChange={(e)=>setFirstName(()=>e.target.value)}
+          			value={firstname}
+          			onChange={(e)=>setFirstName(()=>e.target.value)}
 					placeholder="First Name"
 				/>
 				{!firstname && <p data-testid="first-name-error-id" className="error">"First name cannot be empty"</p>}
@@ -67,8 +67,8 @@ const SignUpForm = () => {
 					data-testid="last-name-id"
 					type="text"
 					name="lastName"
-          value={lastname}
-          onChange={(e)=>setLastName(()=>e.target.value)}
+          			value={lastname}
+          			onChange={(e)=>setLastName(()=>e.target.value)}
 					placeholder="Last Name"
 				/>
 				{!lastname && <p data-testid="last-name-error-id" className="error">"Last name cannot be empty"</p>}
@@ -76,8 +76,8 @@ const SignUpForm = () => {
 					data-testid="email-id"
 					type="email"
 					name="email"
-          value={email}
-          onChange={(e)=>setEmail(()=>e.target.value)}
+          			value={email}
+          			onChange={(e)=>setEmail(()=>e.target.value)}
 					placeholder="Email Address"
 				/>
 				{!validateEmail(email) && <p data-testid="email-error-id" className="error">"Invalid email address"</p>}
@@ -86,8 +86,8 @@ const SignUpForm = () => {
 					type="password"
 					name="password"
 					placeholder="Password"
-          value={password}
-          onChange={(e)=>setPassword(()=>e.target.value)}
+          			value={password}
+          			onChange={(e)=>setPassword(()=>e.target.value)}
 				/>
 				{password?.length<=7 &&<p data-testid="password-error-id" className="error">"Password must be greater than 7 characters"</p>}
 				<input
@@ -95,8 +95,8 @@ const SignUpForm = () => {
 					type="password"
 					name="confirmPassword"
 					placeholder="Confirm Password"
-          value={password2}
-          onChange={(e)=>setPassword2(()=>e.target.value)}
+          			value={password2}
+          			onChange={(e)=>setPassword2(()=>e.target.value)}
 				/>
 				{((!password || !password2) || (password2 !== password && password2.length !== password.length) )&& <p
 					data-testid="confirm-password-error-id"
