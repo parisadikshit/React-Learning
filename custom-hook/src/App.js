@@ -47,7 +47,6 @@ export const SignUpForm = () => {
     return String(email).match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)
   }
 	const handleSubmit = (e) => {
-    console.log('e',e)
 		e.preventDefault()
 		console.log('Form submitted successfully')
 	}
@@ -102,7 +101,7 @@ export const SignUpForm = () => {
 					data-testid="confirm-password-error-id"
 					className="error"
 				>"Passwords do not match"</p>}
-				<StyledButton type="submit" bg="blue">Sign Up</StyledButton>
+				<StyledButton type="submit" data-testid="submit-button-id" bg="blue">Sign Up</StyledButton>
 			</form>
 	)
 }

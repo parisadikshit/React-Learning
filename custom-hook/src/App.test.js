@@ -37,14 +37,26 @@ describe('SignUpForm Component', ()=> {
     
     test('Validates the form and shows the error messages', ()=> {
         const {getByTestId} = render(<SignUpForm/>);
-
+        const submitbutton = getByTestId('submit-button-id');
+        fireEvent.click(submitbutton)
         expect(getByTestId('first-name-error-id')).toBeInTheDocument();
         expect(getByTestId('last-name-error-id')).toBeInTheDocument();
         expect(getByTestId('email-error-id')).toBeInTheDocument();
         expect(getByTestId('password-error-id')).toBeInTheDocument();
         expect(getByTestId('confirm-password-error-id')).toBeInTheDocument();
 
+    })
 
-
+    test('Submits form input values successfully ', ()=> {
+        const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+        const {getByTestId} = render(<SignUpForm/>);
+        const submitbutton = getByTestId('submit-button-id')
+        fireEvent.change(getByTestId('first-name-id'),{target:{value:'Taylor'}})
+        fireEvent.change(getByTestId('last-name-id'),{target:{value:'Swift'}})
+        fireEvent.change(getByTestId('email-id'),{target:{value:'tay13@gmail.com'}})
+        fireEvent.change(getByTestId('password-id'),{target:{value:'notalotgoingatthemoment13'}})
+        fireEvent.change(getByTestId('confirm-password-id'),{target:{value:'notalotgoingatthemoment13'}})
+        fireEvent.click(submitbutton);
+        expect(consoleLogSpy).toHaveBeenCalledWith('Form submitted successfully');
     })
 })
